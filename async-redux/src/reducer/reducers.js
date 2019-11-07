@@ -16,7 +16,13 @@ export function reducer(state =initialState, action ) {
               error: '',
               isFetching: true
           }
-
+         case FETCH_CHARACTER_SUCCESS:
+             return {
+                 ...state,
+                 error: '',
+                 isFetching: true,
+                 characters: action.payload
+             }
          default:
              return state 
       }
